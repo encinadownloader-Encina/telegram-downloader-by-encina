@@ -9,9 +9,9 @@
   <meta name="description" content="Descarga videos e imagenes desde Telegram Web A y K con progreso, galeria multimedia y gestion por lotes.">
   <title>Telegram Downloader by Encina</title>
   <link rel="icon" href="assets/icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260606-6">
+  <link rel="stylesheet" href="styles.css?v=20260614-8">
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <script src="app.js?v=20260614-1" defer></script>
+  <script src="app.js?v=20260614-2" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -380,35 +380,86 @@
     </section>
 
     <section id="pricing" class="pricing-band">
-      <div class="section-heading">
-        <span data-i18n="pricingEyebrow">Empieza sin compromiso</span>
-        <h2 data-i18n="pricingTitle">Pruebala gratis. Mejora cuando la necesites.</h2>
-        <p data-i18n="pricingText">La infraestructura de suscripcion se conectara antes del lanzamiento publico.</p>
-      </div>
-      <div class="pricing-grid">
-        <article class="price-card">
-          <span class="plan-label" data-i18n="freeName">Gratis</span>
-          <div class="price"><strong>$0</strong><span data-i18n="forever">para siempre</span></div>
-          <p data-i18n="freeDescription">Para probar todo el flujo de Encina.</p>
-          <ul>
-            <li><i data-lucide="check"></i><span data-i18n="freeDownloads">5 descargas cada 24 horas</span></li>
-            <li><i data-lucide="check"></i><span data-i18n="freeVersions">Telegram A y K</span></li>
-            <li><i data-lucide="check"></i><span data-i18n="freeTools">Gestor y progreso visibles</span></li>
-          </ul>
-          <a class="button button-outline" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer" data-i18n="freeCta">Probar gratis</a>
-        </article>
-        <article class="price-card featured">
-          <span class="popular" data-i18n="popular">Mas elegido</span>
-          <span class="plan-label">Premium</span>
-          <div class="price"><strong data-i18n="priceSoon">Proximamente</strong></div>
-          <p data-i18n="premiumDescription">Para usuarios que descargan contenido con frecuencia.</p>
-          <ul>
-            <li><i data-lucide="check"></i><span data-i18n="premiumUnlimited">Descargas sin limite diario</span></li>
-            <li><i data-lucide="check"></i><span data-i18n="premiumPriority">Mejor rendimiento disponible</span></li>
-            <li><i data-lucide="check"></i><span data-i18n="premiumSupport">Soporte prioritario</span></li>
-          </ul>
-          <a class="button button-primary" href="https://encinadownloader.gumroad.com/l/encina-premium" target="_blank" rel="noopener noreferrer" data-i18n="premiumCta">Mejorar a Premium</a>
-        </article>
+      <div class="pricing-stage">
+        <div class="section-heading">
+          <span class="pricing-kicker"><i data-lucide="badge-check"></i><span data-i18n="plansEyebrow">Elige tu plan</span></span>
+          <h2 data-i18n="pricingTitle">Pruebala gratis. Mejora cuando la necesites.</h2>
+          <p data-i18n="pricingText">Descargas organizadas, progreso visible y control total.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card plan-free">
+            <div class="plan-visual" aria-hidden="true"><span><i data-lucide="gem"></i></span></div>
+            <div class="plan-content">
+              <span class="plan-label" data-i18n="freeName">Gratis</span>
+              <small data-i18n="planStart">Para comenzar</small>
+              <div class="price"><strong>$0</strong><span data-i18n="forever">para siempre</span></div>
+              <p data-i18n="freeDescription">Para probar todo el flujo de Encina.</p>
+              <ul>
+                <li><i data-lucide="check"></i><span data-i18n="freeDownloads">20 imagenes y 5 videos cada 24 horas</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="freeVersions">Telegram A y K</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="freeTools">Gestor y progreso visibles</span></li>
+              </ul>
+              <a class="plan-button" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer" data-i18n="freeCta">Probar gratis</a>
+            </div>
+          </article>
+
+          <article class="price-card plan-monthly">
+            <div class="plan-visual" aria-hidden="true"><span><i data-lucide="zap"></i></span></div>
+            <div class="plan-content">
+              <span class="plan-label">Premium</span>
+              <small data-i18n="planMonthly">Mensual</small>
+              <div class="price"><strong>$7.99</strong><span data-i18n="perMonth">por mes</span></div>
+              <p data-i18n="premiumDescription">Para usuarios que descargan contenido con frecuencia.</p>
+              <ul>
+                <li><i data-lucide="check"></i><span data-i18n="premiumUnlimited">Descargas sin limite diario</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="premiumPriority">Mejor rendimiento disponible</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="premiumSupport">Soporte prioritario</span></li>
+              </ul>
+              <a class="plan-button" href="https://encinadownloader.gumroad.com/l/encina-premium" target="_blank" rel="noopener noreferrer" data-i18n="premiumCta">Mejorar a Premium</a>
+            </div>
+          </article>
+
+          <article class="price-card plan-quarterly featured">
+            <span class="popular" data-i18n="popular">Mas popular</span>
+            <div class="plan-visual" aria-hidden="true"><span><i data-lucide="rocket"></i></span></div>
+            <div class="plan-content">
+              <span class="plan-label">Premium</span>
+              <small data-i18n="planQuarterly">Trimestral</small>
+              <div class="price"><strong data-i18n="comingSoon">Proximamente</strong></div>
+              <p data-i18n="quarterlyDescription">Una opcion flexible con beneficios adicionales.</p>
+              <ul>
+                <li><i data-lucide="check"></i><span data-i18n="quarterlyBenefitOne">Todo lo del plan mensual</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="quarterlyBenefitTwo">Acceso anticipado a funciones</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="quarterlyBenefitThree">Soporte Premium</span></li>
+              </ul>
+              <span class="plan-button is-disabled" data-i18n="comingSoon">Proximamente</span>
+            </div>
+          </article>
+
+          <article class="price-card plan-annual">
+            <div class="plan-visual" aria-hidden="true"><span><i data-lucide="crown"></i></span></div>
+            <div class="plan-content">
+              <span class="plan-label">Premium</span>
+              <small data-i18n="planAnnual">Anual</small>
+              <div class="price"><strong data-i18n="comingSoon">Proximamente</strong></div>
+              <p data-i18n="annualDescription">El plan pensado para usuarios de largo plazo.</p>
+              <ul>
+                <li><i data-lucide="check"></i><span data-i18n="annualBenefitOne">Todo lo del plan mensual</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="annualBenefitTwo">Beneficios exclusivos</span></li>
+                <li><i data-lucide="check"></i><span data-i18n="annualBenefitThree">Prioridad maxima</span></li>
+              </ul>
+              <span class="plan-button is-disabled" data-i18n="comingSoon">Proximamente</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="pricing-assurances">
+          <span><i data-lucide="shield-check"></i><span data-i18n="securePayments">Transacciones seguras</span></span>
+          <span><i data-lucide="zap"></i><span data-i18n="instantActivation">Activacion instantanea</span></span>
+          <span><i data-lucide="headphones"></i><span data-i18n="premiumSupport">Soporte prioritario</span></span>
+          <span><i data-lucide="refresh-cw"></i><span data-i18n="cancelAnytime">Cancela cuando quieras</span></span>
+        </div>
       </div>
     </section>
 

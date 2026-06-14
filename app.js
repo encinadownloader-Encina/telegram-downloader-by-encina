@@ -274,6 +274,97 @@ Object.entries(currentPricingCopy).forEach(([language, copy]) => {
   Object.assign(translations[language], copy);
 });
 
+const pricingPlansCopy = {
+  en: {
+    plansEyebrow:"Choose your plan",planStart:"To get started",planMonthly:"Monthly",planQuarterly:"Quarterly",planAnnual:"Annual",perMonth:"per month",comingSoon:"Coming soon",
+    quarterlyDescription:"A flexible option with additional benefits.",quarterlyBenefitOne:"Everything in the monthly plan",quarterlyBenefitTwo:"Early access to features",quarterlyBenefitThree:"Premium support",
+    annualDescription:"Designed for long-term users.",annualBenefitOne:"Everything in the monthly plan",annualBenefitTwo:"Exclusive benefits",annualBenefitThree:"Maximum priority",
+    securePayments:"Secure transactions",instantActivation:"Instant activation",cancelAnytime:"Cancel anytime"
+  },
+  es: {
+    plansEyebrow:"Elige tu plan",planStart:"Para comenzar",planMonthly:"Mensual",planQuarterly:"Trimestral",planAnnual:"Anual",perMonth:"por mes",comingSoon:"Próximamente",
+    quarterlyDescription:"Una opción flexible con beneficios adicionales.",quarterlyBenefitOne:"Todo lo del plan mensual",quarterlyBenefitTwo:"Acceso anticipado a funciones",quarterlyBenefitThree:"Soporte Premium",
+    annualDescription:"El plan pensado para usuarios de largo plazo.",annualBenefitOne:"Todo lo del plan mensual",annualBenefitTwo:"Beneficios exclusivos",annualBenefitThree:"Prioridad máxima",
+    securePayments:"Transacciones seguras",instantActivation:"Activación instantánea",cancelAnytime:"Cancela cuando quieras"
+  },
+  it: {
+    plansEyebrow:"Scegli il tuo piano",planStart:"Per iniziare",planMonthly:"Mensile",planQuarterly:"Trimestrale",planAnnual:"Annuale",perMonth:"al mese",comingSoon:"Prossimamente",
+    quarterlyDescription:"Un'opzione flessibile con vantaggi aggiuntivi.",quarterlyBenefitOne:"Tutto del piano mensile",quarterlyBenefitTwo:"Accesso anticipato alle funzioni",quarterlyBenefitThree:"Supporto Premium",
+    annualDescription:"Pensato per gli utenti a lungo termine.",annualBenefitOne:"Tutto del piano mensile",annualBenefitTwo:"Vantaggi esclusivi",annualBenefitThree:"Priorità massima",
+    securePayments:"Transazioni sicure",instantActivation:"Attivazione immediata",cancelAnytime:"Annulla quando vuoi"
+  },
+  fr: {
+    plansEyebrow:"Choisissez votre offre",planStart:"Pour commencer",planMonthly:"Mensuel",planQuarterly:"Trimestriel",planAnnual:"Annuel",perMonth:"par mois",comingSoon:"Bientôt disponible",
+    quarterlyDescription:"Une formule flexible avec des avantages supplémentaires.",quarterlyBenefitOne:"Tout le forfait mensuel",quarterlyBenefitTwo:"Accès anticipé aux fonctions",quarterlyBenefitThree:"Assistance Premium",
+    annualDescription:"Conçu pour une utilisation à long terme.",annualBenefitOne:"Tout le forfait mensuel",annualBenefitTwo:"Avantages exclusifs",annualBenefitThree:"Priorité maximale",
+    securePayments:"Transactions sécurisées",instantActivation:"Activation instantanée",cancelAnytime:"Résiliez à tout moment"
+  },
+  pt: {
+    plansEyebrow:"Escolha seu plano",planStart:"Para começar",planMonthly:"Mensal",planQuarterly:"Trimestral",planAnnual:"Anual",perMonth:"por mês",comingSoon:"Em breve",
+    quarterlyDescription:"Uma opção flexível com benefícios adicionais.",quarterlyBenefitOne:"Tudo do plano mensal",quarterlyBenefitTwo:"Acesso antecipado a recursos",quarterlyBenefitThree:"Suporte Premium",
+    annualDescription:"Pensado para usuários de longo prazo.",annualBenefitOne:"Tudo do plano mensal",annualBenefitTwo:"Benefícios exclusivos",annualBenefitThree:"Prioridade máxima",
+    securePayments:"Transações seguras",instantActivation:"Ativação instantânea",cancelAnytime:"Cancele quando quiser"
+  },
+  de: {
+    plansEyebrow:"Wähle deinen Plan",planStart:"Zum Einstieg",planMonthly:"Monatlich",planQuarterly:"Vierteljährlich",planAnnual:"Jährlich",perMonth:"pro Monat",comingSoon:"Demnächst",
+    quarterlyDescription:"Eine flexible Option mit zusätzlichen Vorteilen.",quarterlyBenefitOne:"Alles aus dem Monatsplan",quarterlyBenefitTwo:"Früher Zugang zu Funktionen",quarterlyBenefitThree:"Premium-Support",
+    annualDescription:"Für langfristige Nutzer entwickelt.",annualBenefitOne:"Alles aus dem Monatsplan",annualBenefitTwo:"Exklusive Vorteile",annualBenefitThree:"Höchste Priorität",
+    securePayments:"Sichere Transaktionen",instantActivation:"Sofortige Aktivierung",cancelAnytime:"Jederzeit kündbar"
+  },
+  tr: {
+    plansEyebrow:"Planını seç",planStart:"Başlangıç için",planMonthly:"Aylık",planQuarterly:"Üç aylık",planAnnual:"Yıllık",perMonth:"aylık",comingSoon:"Yakında",
+    quarterlyDescription:"Ek avantajlara sahip esnek bir seçenek.",quarterlyBenefitOne:"Aylık plandaki her şey",quarterlyBenefitTwo:"Özelliklere erken erişim",quarterlyBenefitThree:"Premium destek",
+    annualDescription:"Uzun süreli kullanıcılar için.",annualBenefitOne:"Aylık plandaki her şey",annualBenefitTwo:"Özel avantajlar",annualBenefitThree:"En yüksek öncelik",
+    securePayments:"Güvenli işlemler",instantActivation:"Anında etkinleştirme",cancelAnytime:"İstediğin zaman iptal et"
+  },
+  id: {
+    plansEyebrow:"Pilih paket Anda",planStart:"Untuk memulai",planMonthly:"Bulanan",planQuarterly:"Tiga bulanan",planAnnual:"Tahunan",perMonth:"per bulan",comingSoon:"Segera hadir",
+    quarterlyDescription:"Pilihan fleksibel dengan manfaat tambahan.",quarterlyBenefitOne:"Semua dalam paket bulanan",quarterlyBenefitTwo:"Akses awal ke fitur",quarterlyBenefitThree:"Dukungan Premium",
+    annualDescription:"Dirancang untuk pengguna jangka panjang.",annualBenefitOne:"Semua dalam paket bulanan",annualBenefitTwo:"Manfaat eksklusif",annualBenefitThree:"Prioritas maksimum",
+    securePayments:"Transaksi aman",instantActivation:"Aktivasi instan",cancelAnytime:"Batalkan kapan saja"
+  },
+  vi: {
+    plansEyebrow:"Chọn gói của bạn",planStart:"Để bắt đầu",planMonthly:"Hàng tháng",planQuarterly:"Hàng quý",planAnnual:"Hàng năm",perMonth:"mỗi tháng",comingSoon:"Sắp ra mắt",
+    quarterlyDescription:"Lựa chọn linh hoạt với nhiều quyền lợi hơn.",quarterlyBenefitOne:"Mọi quyền lợi của gói tháng",quarterlyBenefitTwo:"Truy cập sớm tính năng",quarterlyBenefitThree:"Hỗ trợ Premium",
+    annualDescription:"Dành cho người dùng lâu dài.",annualBenefitOne:"Mọi quyền lợi của gói tháng",annualBenefitTwo:"Quyền lợi độc quyền",annualBenefitThree:"Ưu tiên cao nhất",
+    securePayments:"Giao dịch an toàn",instantActivation:"Kích hoạt tức thì",cancelAnytime:"Hủy bất cứ lúc nào"
+  },
+  ru: {
+    plansEyebrow:"Выберите тариф",planStart:"Для начала",planMonthly:"Ежемесячно",planQuarterly:"На три месяца",planAnnual:"Ежегодно",perMonth:"в месяц",comingSoon:"Скоро",
+    quarterlyDescription:"Гибкий вариант с дополнительными преимуществами.",quarterlyBenefitOne:"Всё из месячного тарифа",quarterlyBenefitTwo:"Ранний доступ к функциям",quarterlyBenefitThree:"Премиум-поддержка",
+    annualDescription:"Для долгосрочного использования.",annualBenefitOne:"Всё из месячного тарифа",annualBenefitTwo:"Эксклюзивные преимущества",annualBenefitThree:"Максимальный приоритет",
+    securePayments:"Безопасные платежи",instantActivation:"Мгновенная активация",cancelAnytime:"Отмена в любое время"
+  },
+  zh: {
+    plansEyebrow:"选择你的方案",planStart:"开始使用",planMonthly:"月付",planQuarterly:"季付",planAnnual:"年付",perMonth:"每月",comingSoon:"即将推出",
+    quarterlyDescription:"灵活的方案，包含更多权益。",quarterlyBenefitOne:"包含月付方案全部功能",quarterlyBenefitTwo:"抢先体验新功能",quarterlyBenefitThree:"高级支持",
+    annualDescription:"为长期用户设计。",annualBenefitOne:"包含月付方案全部功能",annualBenefitTwo:"专属权益",annualBenefitThree:"最高优先级",
+    securePayments:"安全交易",instantActivation:"即时激活",cancelAnytime:"随时取消"
+  },
+  ja: {
+    plansEyebrow:"プランを選択",planStart:"はじめる",planMonthly:"月額",planQuarterly:"3か月",planAnnual:"年額",perMonth:"月額",comingSoon:"近日公開",
+    quarterlyDescription:"追加特典を備えた柔軟なプランです。",quarterlyBenefitOne:"月額プランの全機能",quarterlyBenefitTwo:"新機能への先行アクセス",quarterlyBenefitThree:"プレミアムサポート",
+    annualDescription:"長期利用者向けのプランです。",annualBenefitOne:"月額プランの全機能",annualBenefitTwo:"限定特典",annualBenefitThree:"最高優先度",
+    securePayments:"安全な取引",instantActivation:"即時有効化",cancelAnytime:"いつでも解約可能"
+  },
+  ar: {
+    plansEyebrow:"اختر خطتك",planStart:"للبدء",planMonthly:"شهري",planQuarterly:"ربع سنوي",planAnnual:"سنوي",perMonth:"شهريًا",comingSoon:"قريبًا",
+    quarterlyDescription:"خيار مرن مع مزايا إضافية.",quarterlyBenefitOne:"كل مزايا الخطة الشهرية",quarterlyBenefitTwo:"وصول مبكر إلى الميزات",quarterlyBenefitThree:"دعم مميز",
+    annualDescription:"مصمم للمستخدمين على المدى الطويل.",annualBenefitOne:"كل مزايا الخطة الشهرية",annualBenefitTwo:"مزايا حصرية",annualBenefitThree:"أولوية قصوى",
+    securePayments:"معاملات آمنة",instantActivation:"تفعيل فوري",cancelAnytime:"إلغاء في أي وقت"
+  },
+  hi: {
+    plansEyebrow:"अपना प्लान चुनें",planStart:"शुरू करने के लिए",planMonthly:"मासिक",planQuarterly:"त्रैमासिक",planAnnual:"वार्षिक",perMonth:"प्रति माह",comingSoon:"जल्द आ रहा है",
+    quarterlyDescription:"अतिरिक्त लाभों वाला लचीला विकल्प।",quarterlyBenefitOne:"मासिक प्लान की सभी सुविधाएँ",quarterlyBenefitTwo:"नई सुविधाओं की शुरुआती पहुँच",quarterlyBenefitThree:"प्रीमियम सहायता",
+    annualDescription:"लंबी अवधि के उपयोगकर्ताओं के लिए।",annualBenefitOne:"मासिक प्लान की सभी सुविधाएँ",annualBenefitTwo:"विशेष लाभ",annualBenefitThree:"सर्वोच्च प्राथमिकता",
+    securePayments:"सुरक्षित लेनदेन",instantActivation:"तुरंत सक्रिय",cancelAnytime:"कभी भी रद्द करें"
+  }
+};
+
+Object.entries(pricingPlansCopy).forEach(([language, copy]) => {
+  Object.assign(translations[language], copy);
+});
+
 const videoTypeLabels = {
   en:"VIDEO",es:"VIDEO",it:"VIDEO",fr:"VIDÉO",zh:"视频",ru:"ВИДЕО",ar:"فيديو",hi:"वीडियो",
   pt:"VÍDEO",de:"VIDEO",tr:"VİDEO",id:"VIDEO",vi:"VIDEO",ja:"動画"
