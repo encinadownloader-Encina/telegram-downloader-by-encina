@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="Descarga videos e imagenes desde Telegram Web A y K con progreso, galeria multimedia y gestion por lotes.">
+  <title>Telegram Downloader by Encina</title>
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css?v=20260606-6">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="app.js?v=20260614-1" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Telegram Downloader by Encina">
+      <img src="assets/icon.png" alt="">
+      <span>Encina</span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#demo" data-i18n="navDemo">Demostracion</a>
+      <a href="#features" data-i18n="navFeatures">Funciones</a>
+      <a href="#compatibility" data-i18n="navCompatibility">Compatibilidad</a>
+      <a href="#pricing" data-i18n="navPricing">Planes</a>
+      <a href="#faq" data-i18n="navFaq">Preguntas</a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-picker">
+        <button id="language-trigger" class="language-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span id="current-flag" class="language-flag flag-es" aria-hidden="true"></span>
+          <span id="current-language">Español</span>
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <div id="language-menu" class="language-menu" role="listbox" hidden></div>
+      </div>
+        <a class="button button-small" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer" data-i18n="navInstall">Instalar</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image" role="img" aria-label="Telegram Downloader by Encina funcionando dentro de Telegram Web"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span><span data-i18n="heroEyebrow">Creado para Telegram Web A y K</span></div>
+        <h1>Telegram Downloader by Encina</h1>
+        <p data-i18n="heroText">Descarga videos e imagenes desde chats y galerias multimedia, con progreso visible y control total.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="chrome"></i>
+            <span data-i18n="heroCta">Añadir a Chrome</span>
+          </a>
+          <a class="button button-quiet" href="#demo" data-demo-start>
+            <i data-lucide="play"></i>
+            <span data-i18n="heroSecondary">Ver como funciona</span>
+          </a>
+        </div>
+        <div class="hero-proof">
+          <span><i data-lucide="shield-check"></i><span data-i18n="proofPrivate">Sin acceso a tu contraseña</span></span>
+          <span><i data-lucide="mouse-pointer-click"></i><span data-i18n="proofSimple">Descarga directa</span></span>
+          <span><i data-lucide="languages"></i><span data-i18n="proofLanguages">14 idiomas</span></span>
+        </div>
+      </div>
+      <a class="hero-next" href="#product" aria-label="Continuar">
+        <i data-lucide="arrow-down"></i>
+      </a>
+    </section>
+
+    <section id="product" class="product-band">
+      <div class="section-heading">
+        <span data-i18n="productEyebrow">El contenido que ves. Listo para guardar.</span>
+        <h2 data-i18n="productTitle">Una experiencia integrada, no una ventana aparte</h2>
+        <p data-i18n="productText">Encina coloca controles precisos dentro de Telegram y mantiene el progreso sincronizado entre el chat, Media y su gestor de descargas.</p>
+      </div>
+      <div class="product-showcase">
+        <div class="showcase-copy">
+          <div class="version-switch" role="tablist">
+            <button class="is-active" type="button" data-version="k" role="tab">Telegram K</button>
+            <button type="button" data-version="a" role="tab">Telegram A</button>
+          </div>
+          <div class="feature-stat">
+            <strong data-i18n="showcaseTitle">Todo el flujo en un mismo lugar</strong>
+            <p data-i18n="showcaseText">Detecta el tipo de archivo, muestra el avance en tiempo real y recuerda lo que ya descargaste.</p>
+          </div>
+          <ul class="check-list">
+            <li><i data-lucide="check"></i><span data-i18n="showcaseOne">Botones sobre videos e imagenes reales</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="showcaseTwo">Descarga desde el chat y la pestaña Media</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="showcaseThree">Pausa, reanuda o detiene descargas</span></li>
+          </ul>
+        </div>
+        <figure class="app-frame">
+          <div class="frame-bar">
+            <span></span><span></span><span></span>
+            <small>web.telegram.org/<b id="version-path">k</b>/</small>
+          </div>
+          <img id="product-image" src="assets/product-fictional-k.png" alt="Demostracion ficticia del gestor multimedia">
+        </figure>
+      </div>
+    </section>
+
+    <section id="demo" class="demo-band">
+      <div class="section-heading">
+        <span data-i18n="demoEyebrow">Demostracion guiada</span>
+        <h2 data-i18n="demoTitle">Mira como funciona</h2>
+        <p data-i18n="demoText">Descubre como descargar imagenes y videos de Telegram Web de forma rapida, simple y organizada.</p>
+      </div>
+
+      <div class="demo-meta" aria-label="Informacion de la demostracion">
+        <span><i data-lucide="shield-check"></i><span data-i18n="demoFictional">Contenido ficticio</span></span>
+        <span><i data-lucide="monitor-check"></i><span data-i18n="demoCompatible">Telegram Web A y K</span></span>
+        <span><i data-lucide="clock-3"></i><span data-i18n="demoDuration">2 minutos</span></span>
+      </div>
+
+      <div class="demo-experience">
+        <div id="demo-player" class="demo-player" tabindex="0" aria-label="Demostracion interactiva de Telegram Downloader by Encina">
+          <div class="demo-stage">
+            <img id="demo-scene-image" src="assets/product-fictional-k.png" alt="">
+            <div class="demo-stage-shade"></div>
+            <div class="demo-browser-bar">
+              <span></span><span></span><span></span>
+              <small id="demo-browser-path">web.telegram.org/k/</small>
+            </div>
+            <div class="demo-channel">
+              <span class="demo-avatar">OC</span>
+              <div><strong id="demo-channel-name">Orbit Creators</strong><small id="demo-channel-status">128 miembros</small></div>
+            </div>
+            <div id="demo-action-card" class="demo-action-card">
+              <span id="demo-action-icon"><i data-lucide="sparkles"></i></span>
+              <small id="demo-scene-kicker" data-i18n="demoSceneOneKicker">Todo empieza aqui</small>
+              <strong id="demo-scene-title" data-i18n="demoSceneOneTitle">Descubre contenido y guardalo con un clic</strong>
+              <p id="demo-scene-text" data-i18n="demoSceneOneText">Encina se integra en la interfaz sin interrumpir tu navegacion.</p>
+            </div>
+            <div id="demo-download-pill" class="demo-download-pill">
+              <i data-lucide="download"></i>
+              <span id="demo-download-label" data-i18n="demoDownloadVideo">Descargar video</span>
+              <b id="demo-download-progress">0%</b>
+            </div>
+            <button id="demo-center-play" class="demo-center-play" type="button" aria-label="Reproducir">
+              <i data-lucide="play"></i>
+            </button>
+          </div>
+
+          <div class="demo-controls">
+            <button id="demo-play" type="button" title="Reproducir"><i data-lucide="play"></i></button>
+            <button id="demo-restart" type="button" title="Reiniciar"><i data-lucide="rotate-ccw"></i></button>
+            <span id="demo-time">00:00 / 02:00</span>
+            <div id="demo-timeline" class="demo-timeline" role="slider" aria-valuemin="0" aria-valuemax="120" aria-valuenow="0" tabindex="0">
+              <span id="demo-timeline-buffer"></span>
+              <span id="demo-timeline-progress"></span>
+              <b id="demo-timeline-thumb"></b>
+            </div>
+            <button id="demo-captions" type="button" title="Subtitulos"><i data-lucide="captions"></i></button>
+            <button id="demo-audio" type="button" title="Audio"><i data-lucide="languages"></i></button>
+            <button id="demo-fullscreen" type="button" title="Pantalla completa"><i data-lucide="maximize"></i></button>
+          </div>
+          <div id="demo-track-menu" class="demo-track-menu" hidden>
+            <strong data-i18n="demoTracks">Pistas de demostracion</strong>
+            <button type="button" class="is-active"><span class="language-flag flag-es"></span><span data-i18n="demoTrackCurrent">Idioma de la pagina</span><i data-lucide="check"></i></button>
+            <button type="button" disabled><i data-lucide="mic-2"></i><span data-i18n="demoTrackFuture">Mas pistas proximamente</span></button>
+          </div>
+        </div>
+
+        <aside class="demo-guide">
+          <span class="demo-guide-count"><b id="demo-step-number">01</b> / 10</span>
+          <small id="demo-guide-kicker" data-i18n="demoSceneOneKicker">Todo empieza aqui</small>
+          <h3 id="demo-guide-title" data-i18n="demoSceneOneTitle">Descubre contenido y guardalo con un clic</h3>
+          <p id="demo-guide-text" data-i18n="demoSceneOneText">Encina se integra en la interfaz sin interrumpir tu navegacion.</p>
+          <div class="demo-guide-benefit">
+            <i data-lucide="circle-check-big"></i>
+            <span id="demo-guide-benefit" data-i18n="demoSceneOneBenefit">Una experiencia integrada desde el primer momento.</span>
+          </div>
+          <button id="demo-next" class="button button-primary" type="button">
+            <span data-i18n="demoNext">Siguiente capitulo</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </aside>
+      </div>
+
+      <div id="demo-chapters" class="demo-chapters" aria-label="Capitulos">
+        <button class="is-active" type="button" data-demo-chapter="0"><span>01</span><strong data-i18n="chapterIntro">Introduccion</strong><small>00:00</small></button>
+        <button type="button" data-demo-chapter="1"><span>02</span><strong data-i18n="chapterInstall">Instalacion</strong><small>00:12</small></button>
+        <button type="button" data-demo-chapter="2"><span>03</span><strong data-i18n="chapterImages">Imagenes</strong><small>00:24</small></button>
+        <button type="button" data-demo-chapter="3"><span>04</span><strong data-i18n="chapterVideos">Videos</strong><small>00:36</small></button>
+        <button type="button" data-demo-chapter="4"><span>05</span><strong data-i18n="chapterFree">Plan gratuito</strong><small>00:48</small></button>
+        <button type="button" data-demo-chapter="5"><span>06</span><strong data-i18n="chapterLogin">Inicio de sesion</strong><small>01:00</small></button>
+        <button type="button" data-demo-chapter="6"><span>07</span><strong data-i18n="chapterQuota">Cuotas diarias</strong><small>01:12</small></button>
+        <button type="button" data-demo-chapter="7"><span>08</span><strong data-i18n="chapterPremium">Premium</strong><small>01:24</small></button>
+        <button type="button" data-demo-chapter="8"><span>09</span><strong>Telegram A</strong><small>01:36</small></button>
+        <button type="button" data-demo-chapter="9"><span>10</span><strong>Telegram K</strong><small>01:48</small></button>
+      </div>
+
+      <div class="demo-learn-more">
+        <div>
+          <span data-i18n="demoLearnEyebrow">Conoce el flujo completo</span>
+          <strong data-i18n="demoLearnTitle">Quieres aprender mas?</strong>
+        </div>
+        <button class="button button-primary" type="button" data-demo-start>
+          <i data-lucide="play"></i>
+          <span data-i18n="demoLearnButton">Abrir demostracion</span>
+        </button>
+      </div>
+
+      <div class="comparison-wrap">
+        <div class="section-heading align-left">
+          <span data-i18n="compareEyebrow">Una experiencia mas completa</span>
+          <h2 data-i18n="compareTitle">Creada para descargar sin perder el control</h2>
+          <p data-i18n="compareText">Una comparacion clara frente a muchas extensiones tradicionales.</p>
+        </div>
+        <div class="comparison-table">
+          <div class="comparison-head"><span data-i18n="compareFeature">Caracteristica</span><strong>Encina</strong><strong data-i18n="compareTraditional">Tradicional</strong></div>
+          <div><span data-i18n="compareModern">Interfaz moderna</span><i data-lucide="check"></i><i data-lucide="minus"></i></div>
+          <div><span data-i18n="compareImages">Descarga de imagenes</span><i data-lucide="check"></i><i data-lucide="circle-help"></i></div>
+          <div><span data-i18n="compareVideos">Descarga de videos</span><i data-lucide="check"></i><i data-lucide="check"></i></div>
+          <div><span data-i18n="compareAccount">Sistema de usuario</span><i data-lucide="check"></i><i data-lucide="minus"></i></div>
+          <div><span data-i18n="compareVersions">Telegram Web A y K</span><i data-lucide="check"></i><i data-lucide="circle-help"></i></div>
+          <div><span data-i18n="compareManager">Gestor y progreso visible</span><i data-lucide="check"></i><i data-lucide="minus"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-band">
+      <div class="section-heading">
+        <span data-i18n="featuresEyebrow">Mas que descargar</span>
+        <h2 data-i18n="featuresTitle">Herramientas para quienes realmente usan Telegram</h2>
+      </div>
+
+      <div id="manager" class="manager-band">
+      <div class="manager-copy">
+        <span data-i18n="managerEyebrow">Tu biblioteca, organizada</span>
+        <h2 data-i18n="managerTitle">Controla cada descarga desde un solo panel</h2>
+        <p data-i18n="managerText">Encina reúne los archivos detectados en un gestor visual. Revisa miniaturas, duración, tamaño y progreso antes de decidir qué guardar.</p>
+        <ul class="manager-points">
+          <li><i data-lucide="layout-list"></i><span data-i18n="managerPointOne">Videos e imágenes en pestañas separadas</span></li>
+          <li><i data-lucide="list-checks"></i><span data-i18n="managerPointTwo">Selección individual o múltiple</span></li>
+          <li><i data-lucide="activity"></i><span data-i18n="managerPointThree">Progreso independiente para cada archivo</span></li>
+          <li><i data-lucide="refresh-cw"></i><span data-i18n="managerPointFour">Actualización sin interrumpir descargas activas</span></li>
+        </ul>
+      </div>
+
+      <div class="manager-demo" aria-label="Demostración ficticia del gestor de descargas Senna">
+        <div class="manager-topbar">
+          <div>
+            <strong data-i18n="managerName">Gestor de descargas Encina</strong>
+            <small data-i18n="managerFound">6 videos encontrados</small>
+          </div>
+          <span data-i18n="managerPreview">Vista gratuita</span>
+              <a href="#pricing" data-i18n="managerUpgrade">Mejorar plan</a>
+          <i data-lucide="x"></i>
+        </div>
+        <div class="manager-tabs">
+          <button class="is-active" type="button"><i data-lucide="video"></i><span data-i18n="managerVideos">Videos</span></button>
+          <button type="button"><i data-lucide="image"></i><span data-i18n="managerImages">Imágenes</span></button>
+        </div>
+        <div class="manager-toolbar">
+          <button type="button"><i data-lucide="refresh-cw"></i><span data-i18n="managerRefresh">Actualizar</span></button>
+          <button type="button"><i data-lucide="download"></i><span data-i18n="managerSelected">Descargar seleccionados</span></button>
+          <button type="button"><i data-lucide="trash-2"></i><span data-i18n="managerClear">Limpiar</span></button>
+        </div>
+        <div class="manager-count" data-i18n="managerListFound">6 videos encontrados</div>
+        <div class="manager-list">
+          <div class="manager-item">
+            <span class="manager-check is-checked"><i data-lucide="check"></i></span>
+            <span class="manager-thumb thumb-mountain"></span>
+            <span class="manager-file"><strong data-i18n="managerFileOne">video: ruta-alpina-01</strong><small><span data-i18n="managerTypeVideo">VIDEO</span> · 02:14 · 38.4 MB</small></span>
+            <button type="button" data-i18n="managerDownload">Descargar</button>
+          </div>
+          <div class="manager-item is-downloading">
+            <span class="manager-check"></span>
+            <span class="manager-thumb thumb-city"></span>
+            <span class="manager-file">
+              <strong data-i18n="managerFileTwo">video: ciudad-nocturna-02</strong>
+              <small><span data-i18n="managerTypeVideo">VIDEO</span> · 00:45 · 18.7 MB</small>
+              <span class="manager-progress"><span style="width:68%"></span></span>
+            </span>
+            <button type="button">68%</button>
+          </div>
+          <div class="manager-item">
+            <span class="manager-check is-checked"><i data-lucide="check"></i></span>
+            <span class="manager-thumb thumb-aurora"></span>
+            <span class="manager-file"><strong data-i18n="managerFileThree">video: luces-del-norte-03</strong><small><span data-i18n="managerTypeVideo">VIDEO</span> · 01:09 · 26.2 MB</small></span>
+            <button type="button" data-i18n="managerDownload">Descargar</button>
+          </div>
+          <div class="manager-item is-complete">
+            <span class="manager-check"><i data-lucide="check"></i></span>
+            <span class="manager-thumb thumb-coast"></span>
+            <span class="manager-file"><strong data-i18n="managerFileFour">video: costa-aérea-04</strong><small data-i18n="managerCompleted">VIDEO · Descarga completada</small></span>
+            <button type="button" data-i18n="managerSaved">Guardado</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <i data-lucide="gallery-horizontal-end"></i>
+          <h3 data-i18n="featureMediaTitle">Media completa</h3>
+          <p data-i18n="featureMediaText">Descarga desde el chat o cada miniatura de la galeria multimedia.</p>
+        </article>
+        <article>
+          <i data-lucide="activity"></i>
+          <h3 data-i18n="featureProgressTitle">Progreso sincronizado</h3>
+          <p data-i18n="featureProgressText">El porcentaje acompaña al archivo incluso cuando cambias de vista.</p>
+        </article>
+        <article>
+          <i data-lucide="list-checks"></i>
+          <h3 data-i18n="featureBatchTitle">Gestor por lotes</h3>
+          <p data-i18n="featureBatchText">Selecciona varios elementos, revisa sus caratulas y controla cada descarga.</p>
+        </article>
+        <article>
+          <i data-lucide="image-down"></i>
+          <h3 data-i18n="featureDetectTitle">Deteccion inteligente</h3>
+          <p data-i18n="featureDetectText">Distingue imagenes y videos para aplicar el metodo correcto a cada archivo.</p>
+        </article>
+        <article>
+          <i data-lucide="pause-circle"></i>
+          <h3 data-i18n="featureControlTitle">Control real</h3>
+          <p data-i18n="featureControlText">Pausa, continua o detiene una descarga sin perder el control de la sesion.</p>
+        </article>
+        <article>
+          <i data-lucide="badge-check"></i>
+          <h3 data-i18n="featureMemoryTitle">Memoria de descargas</h3>
+          <p data-i18n="featureMemoryText">Identifica archivos completados para evitar descargas repetidas.</p>
+        </article>
+      </div>
+
+      <div class="settings-showcase">
+        <div class="settings-preview">
+          <div class="settings-brand">
+            <img src="assets/icon.png" alt="">
+            <div><small data-i18n="settingsLabel">CONFIGURACIÓN</small><strong>Telegram Downloader by Encina</strong></div>
+          </div>
+          <div class="settings-group">
+            <strong data-i18n="settingsLanguage">Idioma</strong>
+            <div class="settings-select"><span class="language-flag flag-es"></span><span data-i18n="settingsSpanish">Español</span><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="settings-group">
+            <strong data-i18n="settingsDownloadControl">Control de descargas</strong>
+            <div class="settings-actions">
+              <button type="button"><i data-lucide="pause"></i><span data-i18n="settingsPause">Pausar todo</span></button>
+              <button type="button"><i data-lucide="play"></i><span data-i18n="settingsResume">Continuar todo</span></button>
+              <button class="danger" type="button"><i data-lucide="square"></i><span data-i18n="settingsStop">Detener todo</span></button>
+            </div>
+          </div>
+          <div class="settings-option">
+            <div><strong data-i18n="settingsSmallMedia">Mostrar media pequeña</strong><small data-i18n="settingsSmallMediaHelp">Añade botones incluso en iconos, reacciones e imágenes pequeñas.</small></div>
+            <span class="demo-switch is-on"><span></span></span>
+          </div>
+          <div class="settings-option">
+            <div><strong data-i18n="settingsLock">Bloquear botones descargados</strong><small data-i18n="settingsLockHelp">Evita descargar por accidente un archivo que ya fue guardado.</small></div>
+            <span class="demo-switch"><span></span></span>
+          </div>
+        </div>
+
+        <div class="settings-copy">
+          <span data-i18n="settingsEyebrow">Se adapta a cada usuario</span>
+          <h2 data-i18n="settingsTitle">Preferencias claras, aplicadas al instante</h2>
+          <p data-i18n="settingsText">El panel permite decidir cómo debe comportarse Encina sin recargar Telegram. Cada opción tiene un propósito sencillo y puede cambiarse cuando sea necesario.</p>
+          <div class="settings-explanations">
+            <article><i data-lucide="scan-search"></i><div><strong data-i18n="settingsExplainSmallTitle">Más alcance cuando lo necesitas</strong><p data-i18n="settingsExplainSmallText">Activa los botones sobre elementos muy pequeños. Desactívalo para mantener una vista más limpia y limitar Encina al contenido principal.</p></div></article>
+            <article><i data-lucide="badge-check"></i><div><strong data-i18n="settingsExplainLockTitle">Protección contra duplicados</strong><p data-i18n="settingsExplainLockText">Después de una descarga exitosa, Encina puede bloquear ese botón y marcar el archivo como guardado. Si prefieres repetir descargas, puedes dejarlo habilitado.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compatibility" class="compatibility-band">
+      <div class="compatibility-copy">
+        <span data-i18n="compatibilityEyebrow">Dos versiones. Una sola extension.</span>
+        <h2 data-i18n="compatibilityTitle">Diseñada especificamente para Telegram A y K</h2>
+        <p data-i18n="compatibilityText">Cada version tiene su propio sistema de deteccion optimizado. Encina se adapta sin mezclar sus comportamientos.</p>
+      </div>
+      <div class="compatibility-table">
+        <div class="table-head"><span data-i18n="tableFeature">Funcion</span><strong>A</strong><strong>K</strong></div>
+        <div><span data-i18n="tableChat">Descarga en chats</span><i data-lucide="check"></i><i data-lucide="check"></i></div>
+        <div><span data-i18n="tableMedia">Descarga en Media</span><i data-lucide="check"></i><i data-lucide="check"></i></div>
+        <div><span data-i18n="tableProgress">Progreso visible</span><i data-lucide="check"></i><i data-lucide="check"></i></div>
+        <div><span data-i18n="tableManager">Gestor por lotes</span><i data-lucide="check"></i><i data-lucide="check"></i></div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing-band">
+      <div class="section-heading">
+        <span data-i18n="pricingEyebrow">Empieza sin compromiso</span>
+        <h2 data-i18n="pricingTitle">Pruebala gratis. Mejora cuando la necesites.</h2>
+        <p data-i18n="pricingText">La infraestructura de suscripcion se conectara antes del lanzamiento publico.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <span class="plan-label" data-i18n="freeName">Gratis</span>
+          <div class="price"><strong>$0</strong><span data-i18n="forever">para siempre</span></div>
+          <p data-i18n="freeDescription">Para probar todo el flujo de Encina.</p>
+          <ul>
+            <li><i data-lucide="check"></i><span data-i18n="freeDownloads">5 descargas cada 24 horas</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="freeVersions">Telegram A y K</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="freeTools">Gestor y progreso visibles</span></li>
+          </ul>
+          <a class="button button-outline" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer" data-i18n="freeCta">Probar gratis</a>
+        </article>
+        <article class="price-card featured">
+          <span class="popular" data-i18n="popular">Mas elegido</span>
+          <span class="plan-label">Premium</span>
+          <div class="price"><strong data-i18n="priceSoon">Proximamente</strong></div>
+          <p data-i18n="premiumDescription">Para usuarios que descargan contenido con frecuencia.</p>
+          <ul>
+            <li><i data-lucide="check"></i><span data-i18n="premiumUnlimited">Descargas sin limite diario</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="premiumPriority">Mejor rendimiento disponible</span></li>
+            <li><i data-lucide="check"></i><span data-i18n="premiumSupport">Soporte prioritario</span></li>
+          </ul>
+          <a class="button button-primary" href="https://encinadownloader.gumroad.com/l/encina-premium" target="_blank" rel="noopener noreferrer" data-i18n="premiumCta">Mejorar a Premium</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-band">
+      <div class="section-heading align-left">
+        <span data-i18n="faqEyebrow">Respuestas claras</span>
+        <h2 data-i18n="faqTitle">Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary><span data-i18n="faqOneQ">¿Funciona con la aplicacion de escritorio?</span><i data-lucide="plus"></i></summary>
+          <p data-i18n="faqOneA">Encina funciona sobre Telegram Web A y K dentro de Chrome. No controla la aplicacion nativa.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faqTwoQ">¿Puede entrar a canales privados?</span><i data-lucide="plus"></i></summary>
+          <p data-i18n="faqTwoA">Solo trabaja con contenido que tu cuenta ya puede ver dentro de Telegram Web.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faqThreeQ">¿Que tipos de contenido descarga?</span><i data-lucide="plus"></i></summary>
+          <p data-i18n="faqThreeA">Videos, imagenes y otros archivos visibles compatibles, tanto en chats como en Media.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faqFourQ">¿Encina pertenece a Telegram?</span><i data-lucide="plus"></i></summary>
+          <p data-i18n="faqFourA">No. Es una herramienta independiente y no esta afiliada ni respaldada por Telegram.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing-band">
+      <img src="assets/icon.png" alt="">
+      <div>
+        <h2 data-i18n="closingTitle">Tu contenido de Telegram, bajo tu control.</h2>
+        <p data-i18n="closingText">Prueba Encina y descubre una forma mas completa de guardar lo que necesitas.</p>
+      </div>
+      <a class="button button-primary" href="https://chromewebstore.google.com/detail/cjmfikbeldphloaknnfhjpjmbfhggigc" target="_blank" rel="noopener noreferrer"><span data-i18n="closingCta">Empezar gratis</span><i data-lucide="arrow-right"></i></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><img src="assets/icon.png" alt=""><span>Encina</span></a>
+    <p data-i18n="footerDisclaimer">Herramienta independiente para Telegram Web. No afiliada a Telegram.</p>
+    <div>
+      <a href="privacy.html" data-i18n="footerPrivacy">Privacidad</a>
+      <a href="terms.html" data-i18n="footerTerms">Terminos</a>
+      <a href="support.html" data-i18n="footerSupport">Soporte</a>
+    </div>
+  </footer>
+</body>
+</html>
